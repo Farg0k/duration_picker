@@ -712,13 +712,15 @@ class DurationPickerDialogState extends State<DurationPickerDialog> {
           duration: _selectedDuration!,
           onChanged: _handleTimeChanged,
           baseUnit: widget.baseUnit,
+          upperBound: widget.upperBound,
+          lowerBound: widget.lowerBound,
         ),
       ),
     );
 
     final Widget actions = ButtonBarTheme(
       data: ButtonBarTheme.of(context),
-      child: ButtonBar(
+      child: OverflowBar(
         children: <Widget>[
           TextButton(
             onPressed: _handleCancel,
